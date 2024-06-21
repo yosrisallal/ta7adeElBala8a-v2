@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.التحديالأعظمفيالبلاغة" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#DAFBD8</item>
+        <item name="colorPrimaryVariant">#bfcdd1</item>
+        <item name="colorOnPrimary">#b5ebf9</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item> <!-- Set status bar icons to dark -->
+
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

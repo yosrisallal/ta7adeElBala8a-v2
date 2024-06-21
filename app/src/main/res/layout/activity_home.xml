@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home_Activity"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:scaleType="center"
+            android:src="@drawable/ic_home_svgrepo_com" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="2"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/arabic"
+            android:gravity="center"
+            android:text=" الصفحة الرئيسية "
+            android:textColor="@color/black"
+            />
+
+        <ImageView
+            android:id="@+id/logo_image_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:padding="5dp"
+            android:src="@drawable/home_logo">
+
+        </ImageView>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="390dp"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/level1"
+                        app:cardCornerRadius="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginHorizontal="16sp"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:elevation="5dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp"
+                            android:background="@drawable/cardviews3">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_proud_pose_svgrepo_com"
+                                android:layout_marginTop="3sp"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:autoSizeMaxTextSize="28sp"
+                                android:autoSizeMinTextSize="12sp"
+                                android:autoSizeTextType="uniform"
+                                android:fontFamily="@font/arabic"
+                                android:gravity="center"
+                                android:padding="7dp"
+                                android:layout_weight="1"
+                                android:text="مَن أنهى الصَّفَّ الأوَّل الثَّانويَّ"
+                                android:textColor="@color/white" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/level2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="16sp"
+                        android:elevation="8dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="10dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp"
+                            android:background="@drawable/cardviews3">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_smart_worker_svgrepo_com"
+                                android:layout_marginTop="3sp"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:autoSizeMaxTextSize="28sp"
+                                android:autoSizeMinTextSize="12sp"
+                                android:autoSizeTextType="uniform"
+                                android:fontFamily="@font/quran1"
+                                android:gravity="center"
+                                android:padding="7dp"
+                                android:text="مَن أنهى الصَّفَّ الثَّاني الثَّانوي"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/level3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="15dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:elevation="10sp"
+                        android:layout_marginHorizontal="16sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp"
+                            android:background="@drawable/cardviews3">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_achievement_award_champion_svgrepo_com"
+                                android:layout_marginTop="3sp"
+                                />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:autoSizeMaxTextSize="28sp"
+                                android:autoSizeMinTextSize="12sp"
+                                android:autoSizeTextType="uniform"
+                                android:fontFamily="@font/quran1"
+                                android:gravity="center"
+                                android:padding="7dp"
+                                android:layout_weight="1"
+                                android:text="مَن أنهى الصَّفَّ الثَّالث الثَّانوي"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/website" />
+
+                <TextView
+                    android:id="@+id/website"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/arabic"
+
+                    android:gravity="center"
+                    android:text="  شبكة نحو دوت كوم"
+                    android:textSize="15dp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/youtube" />
+
+                <TextView
+                    android:id="@+id/youtube"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/arabic"
+                    android:gravity="center"
+                    android:text="اشترك في قناتنا على يوتيوب"
+                    android:textColor="#FF0000"
+                    android:textSize="15dp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/facebook" />
+
+                <TextView
+                    android:id="@+id/facebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/arabic"
+                    android:gravity="center"
+                    android:text="موجودين أيضا على فيسبوك "
+                    android:textColor="#1877f2"
+                    android:textSize="15dp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
