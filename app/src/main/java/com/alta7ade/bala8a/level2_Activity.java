@@ -107,7 +107,7 @@ public class level2_Activity extends AppCompatActivity {
         }
 
 
-//make the clock
+        //make the clock
         Thread clock_thread=new Thread(new Runnable() {
             @Override
             public void run() {
@@ -133,13 +133,10 @@ public class level2_Activity extends AppCompatActivity {
                 }.start();
             }
         });
-// run the clock
+        // run the clock
         clock_thread.run();
 
-
-
-
-//run the level
+        //run the level
         if((Questions.size())>0){
             String r0= strings_for_remove.get(0);
             String r1= strings_for_remove.get(1);
@@ -457,17 +454,8 @@ public class level2_Activity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-
-    }
-
     //get question
     public void getquestion(){
-
-
-
-
         //initialize variable
         low=0;
         LOW=0;
@@ -480,73 +468,28 @@ public class level2_Activity extends AppCompatActivity {
         Questions.remove(q1);
         Question_tv.setText(q1.getQuestion());
         ANSWERS=new ArrayList<>();
+        ANSWERS.add(q1.getRight());
+        ANSWERS.add(q1.getFalse1());
+        ANSWERS.add(q1.getFalse2());
+        ANSWERS.add(q1.getFalse3());
+        high=ANSWERS.size();
+        random_integer1= rand.nextInt((high-low)+low);
+        reponse1.setText(ANSWERS.get(random_integer1));
+        ANSWERS.remove(random_integer1);
+        high=ANSWERS.size();
+        random_integer1= rand.nextInt((high-low)+low);
+        reponse2.setText(ANSWERS.get(random_integer1));
+        ANSWERS.remove(random_integer1);
+        high=ANSWERS.size();
+        random_integer1= rand.nextInt((high-low)+low);
+        reponse3.setText(ANSWERS.get(random_integer1));
+        ANSWERS.remove(random_integer1);
+        reponse4.setText(ANSWERS.get(0));
+        reponse1.setVisibility(View.VISIBLE);
+        reponse2.setVisibility(View.VISIBLE);
+        reponse3.setVisibility(View.VISIBLE);
+        reponse4.setVisibility(View.VISIBLE);
 
-        switch(q1.getNumber()){
-
-            case 2:
-                ANSWERS.add(q1.getRight());
-                ANSWERS.add(q1.getFalse1());
-                high=ANSWERS.size();
-                random_integer1= rand.nextInt((high-low)+low);
-                reponse1.setText(ANSWERS.get(random_integer1));
-                ANSWERS.remove(random_integer1);
-                reponse2.setText(ANSWERS.get(0));
-                ANSWERS.remove(0);
-                reponse1.setVisibility(View.VISIBLE);
-                reponse2.setVisibility(View.VISIBLE);
-                reponse3.setVisibility(View.INVISIBLE);
-                reponse4.setVisibility(View.INVISIBLE);
-                break;
-
-
-            case 3:
-                ANSWERS.add(q1.getRight());
-                ANSWERS.add(q1.getFalse1());
-                ANSWERS.add(q1.getFalse2());
-                high=ANSWERS.size();
-                random_integer1= rand.nextInt((high-low)+low);
-                reponse1.setText(ANSWERS.get(random_integer1));
-                ANSWERS.remove(random_integer1);
-                high=ANSWERS.size();
-                random_integer1= rand.nextInt((high-low)+low);
-                reponse2.setText(ANSWERS.get(random_integer1));
-                ANSWERS.remove(random_integer1);
-                reponse3.setText(ANSWERS.get(0));
-                reponse1.setVisibility(View.VISIBLE);
-                reponse2.setVisibility(View.VISIBLE);
-                reponse3.setVisibility(View.VISIBLE);
-                reponse4.setVisibility(View.INVISIBLE);
-                break;
-
-
-
-            case 4:
-                ANSWERS.add(q1.getRight());
-                ANSWERS.add(q1.getFalse1());
-                ANSWERS.add(q1.getFalse2());
-                ANSWERS.add(q1.getFalse3());
-                high=ANSWERS.size();
-                random_integer1= rand.nextInt((high-low)+low);
-                reponse1.setText(ANSWERS.get(random_integer1));
-                ANSWERS.remove(random_integer1);
-                high=ANSWERS.size();
-                random_integer1= rand.nextInt((high-low)+low);
-                reponse2.setText(ANSWERS.get(random_integer1));
-                ANSWERS.remove(random_integer1);
-                high=ANSWERS.size();
-                random_integer1= rand.nextInt((high-low)+low);
-                reponse3.setText(ANSWERS.get(random_integer1));
-                ANSWERS.remove(random_integer1);
-                reponse4.setText(ANSWERS.get(0));
-                reponse1.setVisibility(View.VISIBLE);
-                reponse2.setVisibility(View.VISIBLE);
-                reponse3.setVisibility(View.VISIBLE);
-                reponse4.setVisibility(View.VISIBLE);
-                break;
-
-
-
-        }
         qnum++;
         Question_number_tv.setText((qnum+10)+"/20");
 

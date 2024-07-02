@@ -2,21 +2,19 @@ package com.alta7ade.bala8a;
 
 public class questionform {
     String false1, false2, false3, lamp, leson, question, right;
-    int agerequired, number;
+    String category;
 
     public questionform() {
     }
 
-    public questionform(String false1, String false2, String false3, String leson, String question, String right, int agerequired, int number) {
+    public questionform(String false1, String false2, String false3, String leson, String question, String right, String category) {
         this.false1 = false1;
         this.false2 = false2;
         this.false3 = false3;
         this.leson = leson;
         this.question = question;
         this.right = right;
-        this.agerequired = agerequired;
-        this.number = number;
-    }
+        this.category = category;}
 
     public String getFalse1() {
         return false1;
@@ -67,19 +65,12 @@ public class questionform {
         this.right = right;
     }
 
-    public int getAgerequired() {
-        return agerequired;
+    public String getcategory() {
+        return category;
     }
 
-    public void setAgerequired(int agerequired) {
-        this.agerequired = agerequired;
+    public void setcategory(String category) {
+        this.category = category;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
 }

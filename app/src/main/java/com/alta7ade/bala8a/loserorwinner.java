@@ -25,11 +25,11 @@ public class loserorwinner extends AppCompatActivity {
         message=findViewById(R.id.tv_status_message);
         return_home=findViewById(R.id.try_Again);
         lottie_status=findViewById(R.id.lottie_status);
-        message.setTextColor(getResources().getColor(R.color.purple_700));
+        message.setTextColor(getResources().getColor(R.color.secondaire));
         switch(checking){
             case "checked":
                 title_status.setText("أنتَ عبقريٌّ في البلاغة ");
-                title_status.setTextColor(getResources().getColor(R.color.purple_700));
+                title_status.setTextColor(getResources().getColor(R.color.secondaire));
                 lottie_status.setAnimation(R.raw.success);
                 message.setText("المسابقة انتهت .. لكنَّ التَّحدِّي مستمرٌّ");
                 break;

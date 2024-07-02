@@ -40,8 +40,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:fontFamily="@font/arabic"
+                    android:fontFamily="@font/tajawal"
                     android:gravity="center"
+                    android:textColor="@color/black"
                     android:text="0"
                     android:textStyle="bold" />
 
@@ -108,7 +109,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/arabic"
+                        android:fontFamily="@font/tajawal"
                         android:gravity="center"
                         android:textStyle="bold" />
 
@@ -137,7 +138,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:fontFamily="@font/arabic"
+                        android:fontFamily="@font/tajawal"
                         android:gravity="center"
                         android:text="1/10"
                         android:textColor="@color/white"

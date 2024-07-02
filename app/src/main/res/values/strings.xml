@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">التحدي الأعظم في البلاغة</string>
     <string name="banner_id">put banner id here</string>
+    <string name="title">صاحب التطبيق</string>
+    <string name="ownerName">سالم حدارة</string>
+    <string name="ownerTitle">مهندس برمجيات</string>
+    <string name="ownerLocation">قرية الربيع النابض في وادي الورود الذهبية</string>
+    <string name="ownerEmail">Haddara873709@gmail.com</string>
+    <string name="ownerPhone">+961 81 373 487</string>
+    <string name="privacyPolicy">https://www.google.com</string>
+    <string name="youtube">https://www.youtube.com</string>
+    <string name="facebook">https://www.facebook.com</string>
+    <string name="extractplace">القرآن الكريم</string>
+    <string name="quote">إِنَّآ أَنزَلْنَٰهُ قُرْءَٰنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ</string>
 </resources>

@@ -17,8 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
     <LinearLayout
         android:id="@+id/linearplay"
         android:layout_width="100dp"

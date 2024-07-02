@@ -11,42 +11,19 @@ import android.widget.TextView;
 
 public class home_Activity extends AppCompatActivity  {
 CardView level1,level2,level3;
-TextView youtube,website,facebook;
+TextView quote ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
         level1=findViewById(R.id.level1);
         level2=findViewById(R.id.level2);
         level3=findViewById(R.id.level3);
-        youtube=findViewById(R.id.youtube);
-        facebook=findViewById(R.id.facebook);
-        website=findViewById(R.id.website);
-
-        youtube.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCI6iERAueVFkEhrOKStFDNA"));
-                startActivity(intent);
-            }
-        });
-        facebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/nhwdotcom"));
-                startActivity(intent);
-            }
-        });
-        website.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.alnahw.com/"));
-                startActivity(intent);
-            }
-        });
-
-
+        quote=findViewById(R.id.quoteText);
+        if(getResources().getString(R.string.quote).isEmpty()){
+            quote.setVisibility(View.GONE);
+        }
 
         level1.setOnClickListener(new View.OnClickListener() {
             @Override

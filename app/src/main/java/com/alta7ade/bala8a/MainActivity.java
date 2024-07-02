@@ -3,217 +3,103 @@ package com.alta7ade.bala8a;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+
+import java.io.IOException;
+import java.io.InputStream;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     CardView i2;
     Mydatabase sqldb;
-    BufferedReader reader;
-    InputStreamReader inputStreamReader;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.secondaire));
-        }
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.secondaire));
+        System.setProperty("org.apache.poi.javax.xml.stream.XMLInputFactory", "com.fasterxml.aalto.stax.InputFactoryImpl");
+        System.setProperty("org.apache.poi.javax.xml.stream.XMLOutputFactory", "com.fasterxml.aalto.stax.OutputFactoryImpl");
+        System.setProperty("org.apache.poi.javax.xml.stream.XMLEventFactory", "com.fasterxml.aalto.stax.EventFactoryImpl");
         i2=findViewById(R.id.logo_image);
 
         Animation a1= AnimationUtils.loadAnimation(this, R.anim.logo);
         a1.setDuration(2000);
         i2.setAnimation(a1);
         sqldb=new Mydatabase(MainActivity.this);
-
+        sqldb.deleteallquestions();
 
         if((sqldb.getquestionscount())==0) {
             sqldb.deleteallquestions();
-
-            eventchangelistennerAGE11();
-
-            eventchangelistennerAGE12();
-
-            eventchangelistennerAGE13();
-
-            eventchangelistennerAGE14();
-
-            eventchangelistennerAGE15();
-
-            eventchangelistennerAGE16();
-
-            eventchangelistennerAGE17();
-
-            eventchangelistennerAGE18();
-
-            eventchangelistennerAGE19();
-
+            readExcelFromAssets(this, "questions.xls");
         }
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent =new Intent (MainActivity.this,home_Activity.class);
+                Intent intent =new Intent (MainActivity.this,owner_info.class);
                 startActivity(intent);
                 finish();
             }
-        },10000);
+        },3000);
     }
 
-
-    public void eventchangelistennerAGE11(){
+    public void readExcelFromAssets(final Context context, final String fileName) {
         try {
-            inputStreamReader = new InputStreamReader(getAssets().open("11.txt"),"UTF-8");
-            reader = new BufferedReader(inputStreamReader);
-            setdata(17);
 
-        }catch (Exception e) {
+            AssetManager assetManager = context.getAssets();
 
-        }
-    }
+            InputStream inputStream = assetManager.open(fileName);
 
-    public void eventchangelistennerAGE12(){
-        try {
-            inputStreamReader = new InputStreamReader(getAssets().open("12.txt"),"UTF-8");
-            reader = new BufferedReader(inputStreamReader);
-            setdata(17);
+            Workbook workbook= WorkbookFactory.create(inputStream);
 
-        }catch (Exception e) {
+            Sheet sheet = workbook.getSheetAt(0);
+            // Starting from the second row (index 1) to skip the header row
+            for (int rowIndex = 1; rowIndex <= sheet.getLastRowNum(); rowIndex++) {
+                Row row = sheet.getRow(rowIndex);
 
-        }
-    }
-    public void eventchangelistennerAGE13(){
-        try {
-            inputStreamReader = new InputStreamReader(getAssets().open("13.txt"),"UTF-8");
-            reader = new BufferedReader(inputStreamReader);
-            setdata(17);
+                // Read data from each column
+                String question = row.getCell(1).getCellType()== CellType.STRING? row.getCell(1).getStringCellValue():row.getCell(1).getNumericCellValue()+"";
+                String rightAnswer = row.getCell(2).getCellType()== CellType.STRING? row.getCell(2).getStringCellValue():row.getCell(2).getNumericCellValue()+"";
+                String false1 =row.getCell(3).getCellType()== CellType.STRING? row.getCell(3).getStringCellValue():row.getCell(3).getNumericCellValue()+"";
+                String false2 =row.getCell(4).getCellType()== CellType.STRING? row.getCell(4).getStringCellValue():row.getCell(4).getNumericCellValue()+"";
+                String false3 = row.getCell(5).getCellType()== CellType.STRING? row.getCell(5).getStringCellValue():row.getCell(5).getNumericCellValue()+"";
+                String lesson = row.getCell(6).getCellType()== CellType.STRING? row.getCell(6).getStringCellValue():row.getCell(6).getNumericCellValue()+"";
+                String category =row.getCell(7).getCellType()== CellType.STRING? row.getCell(7).getStringCellValue():row.getCell(7).getNumericCellValue()+"";
 
-        }catch (Exception e) {
-
-        }
-    }
-    public void eventchangelistennerAGE14(){
-
-        try {
-            inputStreamReader = new InputStreamReader(getAssets().open("14.txt"),"UTF-8");
-            reader = new BufferedReader(inputStreamReader);
-            setdata(17);
-
-        }catch (Exception e) {
-
-        }
-    }
-    public void eventchangelistennerAGE15(){
-        try {
-            inputStreamReader = new InputStreamReader(getAssets().open("15.txt"),"UTF-8");
-            reader = new BufferedReader(inputStreamReader);
-            setdata(17);
-
-        }catch (Exception e) {
-
-        }
-    }
-    public void eventchangelistennerAGE16(){
-
-        try {
-            inputStreamReader = new InputStreamReader(getAssets().open("16.txt"),"UTF-8");
-            reader = new BufferedReader(inputStreamReader);
-            setdata(18);
-
-        }catch (Exception e) {
-
-        }
-
-    }
-    public void eventchangelistennerAGE17(){
-
-        try {
-            inputStreamReader = new InputStreamReader(getAssets().open("17.txt"),"UTF-8");
-            reader = new BufferedReader(inputStreamReader);
-            setdata(18);
-
-        }catch (Exception e) {
-
-        }
-
-    }
-    public void eventchangelistennerAGE18(){
-
-        try {
-            inputStreamReader = new InputStreamReader(getAssets().open("18.txt"),"UTF-8");
-            reader = new BufferedReader(inputStreamReader);
-            setdata(18);
-
-        }catch (Exception e) {
-
-        }
-
-    }
-    public void eventchangelistennerAGE19(){
-        try {
-                inputStreamReader = new InputStreamReader(getAssets().open("19.txt"),"UTF-8");
-                reader = new BufferedReader(inputStreamReader);
-                setdata(19);
-
-        }catch (Exception e) {
-
-        }
-
-    }
-    public void setdata( int agerequired){
-        String numbers;
-        int number;
-        String question=null;
-        String leson,right,false1,false2,false3;
-        try {
-            if((  numbers= reader.readLine())!=null){
-                do {
-                    number =Integer.parseInt(numbers);
-                    question=reader.readLine();
-                    leson=reader.readLine();
-                    right = reader.readLine();
-                    false1=null;
-                    false2=null;
-                    false3=null;
-
-                    if(number==2){
-
-                        false1= reader.readLine();
-                        false2=null;
-                        false3=null;
-
-                    }
-                    if(number==3){
-                        false1= reader.readLine();
-                        false2= reader.readLine();
-                        false3=null;
-                    }
-
-                    if(number==4){
-                        false1= reader.readLine();
-                        false2= reader.readLine();
-                        false3= reader.readLine();
-                    }
-
-                    String space= reader.readLine();
-
-
-                    sqldb.insertquestionform(new questionform(false1,false2,false3,leson,question,right,agerequired,number));
-                }while( (numbers= reader.readLine()) != null);
-
+                // Assuming sqldb.insertquestionform() is a method that correctly inserts into your database
+                sqldb.insertquestionform(new questionform(false1, false2, false3, lesson, question, rightAnswer, category));
             }
-        }catch (Exception e){
 
+            workbook.close();
+            inputStream.close();
+            Log.d("ExcelReader", "Data inserted successfully!");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e("ExcelReader",  ""+e);
+            // Show toast on UI thread
+            new Handler(context.getMainLooper()).post(() -> Toast.makeText(context, "Error reading Excel file: " + e.getMessage(), Toast.LENGTH_SHORT).show());
 
         }
-
     }
-
-    }
+}

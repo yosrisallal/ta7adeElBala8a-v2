@@ -1,9 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".owner_info">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/tajawal"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="18dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/person"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tajawal"
+                    android:text="@string/ownerName"
+                    android:textSize="25dp"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:id="@+id/ownerTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tajawal"
+                    android:text="@string/ownerTitle"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/ownerLocation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/tajawal"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:textColor="#A8000000"
+                android:gravity="center"
+                android:autoSizeMaxTextSize="16dp"
+                android:background="@drawable/textfield"
+                android:paddingHorizontal="10dp"
+                android:textAlignment="center"
+                android:text="@string/ownerLocation"
+                android:drawableLeft="@drawable/location_svgrepo_com"
+                />
+            <TextView
+                android:id="@+id/ownerEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/tajawal"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:layout_marginTop="20dp"
+                android:textColor="#A8000000"
+                android:gravity="center"
+                android:autoSizeMaxTextSize="16dp"
+                android:background="@drawable/textfield"
+                android:paddingHorizontal="10dp"
+                android:textAlignment="center"
+                android:text="@string/ownerEmail"
+                android:drawableLeft="@drawable/email_1_svgrepo_com"
+                />
+            <TextView
+                android:id="@+id/ownerPhone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/tajawal"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:layout_marginTop="20dp"
+                android:textColor="#A8000000"
+                android:gravity="center"
+                android:autoSizeMaxTextSize="16dp"
+                android:background="@drawable/textfield"
+                android:paddingHorizontal="10dp"
+                android:textAlignment="center"
+                android:text="@string/ownerPhone"
+                android:drawableLeft="@drawable/phone_svgrepo_com"
+                />
+            <TextView
+                android:id="@+id/ownerPrivacyPolicy"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/tajawal"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:layout_marginTop="20dp"
+                android:textColor="#A8000000"
+                android:gravity="center"
+                android:autoSizeMaxTextSize="16dp"
+                android:background="@drawable/textfield"
+                android:paddingHorizontal="10dp"
+                android:textAlignment="center"
+                android:text="انقر هنا لعرض سياسة الخصوصية"
+                android:drawableLeft="@drawable/url_1423_svgrepo_com"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/ownerYoutube"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/youtube_svgrepo_com"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tajawal"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    android:text="قناة اليوتيوب"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ownerFacebook"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/facebook_svgrepo_com"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tajawal"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    android:text="صفحة الفيسبوك"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/goInside"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="32dp"
+            android:background="@drawable/button"
+            android:textColor="@color/black"
+            android:fontFamily="@font/tajawal"
+            android:text="ادخل إلى المسابقة"/>
+    </LinearLayout>
+</ScrollView>
